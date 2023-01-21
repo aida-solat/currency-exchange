@@ -69,6 +69,78 @@ export const setTimeSeriesRates = (payload: any): ISetTimeSeriesRatesAction => (
     payload
 });
 
+export const latestRatesRequest = () => ({
+    type: AppActionType.LATEST_RATES_REQUEST
+});
+
+export const latestRatesSuccess = (payload: any) => ({
+    type: AppActionType.LATEST_RATES_SUCCESS,
+    payload
+});
+
+export const latestRatesFailure = (payload: any) => ({
+    type: AppActionType.LATEST_RATES_FAILURE,
+    payload
+});
+
+export const historicalRatesRequest = () => ({
+    type: AppActionType.HISTORICAL_RATES_REQUEST
+});
+
+export const historicalRatesSuccess = (payload: any) => ({
+    type: AppActionType.HISTORICAL_RATES_SUCCESS,
+    payload
+});
+
+export const historicalRatesFailure = (payload: any) => ({
+    type: AppActionType.HISTORICAL_RATES_FAILURE,
+    payload
+});
+
+export const supportedCurrenciesRequest = () => ({
+    type: AppActionType.SUPPORTED_CURRENCIES_REQUEST
+});
+
+export const supportedCurrenciesSuccess = (payload: any) => ({
+    type: AppActionType.SUPPORTED_CURRENCIES_SUCCESS,
+    payload
+});
+
+export const supportedCurrenciesFailure = (payload: any) => ({
+    type: AppActionType.SUPPORTED_CURRENCIES_FAILURE,
+    payload
+});
+
+export const convertCurrenciesRequest = () => ({
+    type: AppActionType.CONVERT_CURRENCIES_REQUEST
+});
+
+export const convertCurrenciesSuccess = (payload: any) => ({
+    type: AppActionType.CONVERT_CURRENCIES_SUCCESS,
+    payload
+});
+
+export const convertCurrenciesFailure = (payload: any) => ({
+    type: AppActionType.CONVERT_CURRENCIES_FAILURE,
+    payload
+});
+
+export const timeSeriesRatesRequest = () => ({
+    type: AppActionType.TIME_SERIES_RATES_REQUEST
+});
+
+export const timeSeriesRatesSuccess = (payload: any) => ({
+    type: AppActionType.TIME_SERIES_RATES_SUCCESS,
+    payload
+});
+
+export const timeSeriesRatesFailure = (payload: any) => ({
+    type: AppActionType.TIME_SERIES_RATES_FAILURE,
+    payload
+});
+
+
+
 
 
 

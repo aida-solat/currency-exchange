@@ -1,18 +1,12 @@
 import { AppActionType } from '../actionTypes/appActions';
+import {AppState} from '../store/rootState';
 
 
-export interface IAppState {
-    baseCurrency: string
-    rates: any
-    historicalRates: any
-    supportedCurrencies: any
-    convertCurrencies: any
-    timeSeriesRates: any
-}
 
-const initialState: IAppState = {
-    baseCurrency: 'USD',
-    rates: {},
+
+const initialState: AppState = {
+    baseCurrency: 'EUR',
+    latestRates: {},
     historicalRates: {},
     supportedCurrencies: {},
     convertCurrencies: {},
@@ -21,38 +15,34 @@ const initialState: IAppState = {
 
 export default function appReducer(state = initialState, action: any) {
     switch (action.type) {
-        case AppActionType.SET_BASE_CURRENCY:
+        case AppActionType.LATEST_RATES_SUCCESS:
             return {
                 ...state,
-                baseCurrency: action.payload
-            }
-        case AppActionType.SET_LATEST_RATES:
-            return {
-                ...state,
-                rates: action.payload
-            }
-        case AppActionType.SET_HISTORICAL_RATES:
+                latestRates: action.payload
+            };
+        case AppActionType.HISTORICAL_RATES_SUCCESS:
             return {
                 ...state,
                 historicalRates: action.payload
-            }
-        case AppActionType.SET_SUPPORTED_CURRENCIES:
+            };
+        case AppActionType.SUPPORTED_CURRENCIES_SUCCESS:
             return {
                 ...state,
                 supportedCurrencies: action.payload
-            }
-        case AppActionType.SET_CONVERT_CURRENCIES:
+            };
+        case AppActionType.CONVERT_CURRENCIES_SUCCESS:
             return {
                 ...state,
                 convertCurrencies: action.payload
-            }
-        case AppActionType.SET_TIME_SERIES_RATES:
+            };
+        case AppActionType.TIME_SERIES_RATES_SUCCESS:
             return {
                 ...state,
                 timeSeriesRates: action.payload
-            }
+            };
         default:
-            return state
+            return state;
+        
     }
 }
 
