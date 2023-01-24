@@ -1,7 +1,9 @@
 import { AppActionType } from '../actionTypes/appActions';
 import {AppState} from '../store/rootState';
 
-
+export interface Symbol {
+    [key: string]: string;
+}
 
 
 const initialState: AppState = {
@@ -10,8 +12,12 @@ const initialState: AppState = {
     historicalRates: {},
     supportedCurrencies: {},
     convertCurrencies: {},
-    timeSeriesRates: {}
+    timeSeriesRates: {},
+    symbols: Symbol
 }
+
+
+
 
 export default function appReducer(state = initialState, action: any) {
     switch (action.type) {

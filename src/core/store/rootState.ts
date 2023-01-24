@@ -7,6 +7,7 @@ export interface AppState {
     supportedCurrencies: any;
     convertCurrencies: any;
     timeSeriesRates: any;
+    symbols: any;
 }
 
 export interface RootState {

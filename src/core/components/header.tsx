@@ -5,28 +5,31 @@ import Navbar from "react-bootstrap/Navbar";
 
 function Header() {
   return (
-    <Navbar bg='light' expand='lg'>
-      <Container>
-        <Navbar.Brand href='#home'>
-          <img
-            alt=''
-            src='/public/logo.png'
-            width='30'
-            height='30'
-            className='d-inline-block align-top'
-          />
+    <Navbar bg='wite' expand='lg'>
+      <Container className='header' fluid>
+        <Navbar.Brand href='/'>
+          <img alt='' src='/logo.png' className='d-inline-block align-top' />
         </Navbar.Brand>
-        <Navbar.Toggle aria-controls='basic-navbar-nav' />
+        <Navbar.Toggle />
         <Navbar.Collapse id='basic-navbar-nav'>
-          <Nav className='me-auto'>
-            <Nav.Link href='#home'>CURRENCY CONVERTER</Nav.Link>
+          <Nav className='links me-auto' activeKey='/'>
+            <Nav.Link href='/'>CURRENCY CONVERTER</Nav.Link>
             <Nav.Link href='#link'>VIEW CONVERSION HISTORY</Nav.Link>
-            <Nav.Link href='#link'>LOGOUT</Nav.Link>
           </Nav>
+          <Navbar.Collapse className='logout justify-content-end'>
+            <Navbar.Text style={logout}>LOGOUT</Navbar.Text>
+          </Navbar.Collapse>
         </Navbar.Collapse>
       </Container>
     </Navbar>
   );
 }
+
+const logout = {
+  color: "#009688",
+  fontWeight: "bold",
+  fontSize: "14px",
+  FontFace: "Roboto",
+};
 
 export default Header;
